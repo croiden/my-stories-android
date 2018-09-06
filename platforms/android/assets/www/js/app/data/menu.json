@@ -1,0 +1,186 @@
+[{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"#complete-dialog-promocode",
+	"header":"Du hast einen Gutscheincode?",
+	"heading":"Gutscheinaktion",
+	"id":"promoCode",
+	"listClass":"blue-back",
+	"modal":true
+},{
+	"imageSrc":"img/portfolio/2.png",
+	"dataTarget":"",
+	"header":"Geschichten die nichts kosten",
+	"heading":"Meine Geschichtenpakete",
+	"id":"videoStory",
+	"listClass":"pink-back",
+	"modal":false
+},{
+	"imageSrc":"img/portfolio/3.png",
+	"dataTarget":"",
+	"header":"Geschichten die Frühling zwitschern",
+	"heading":"Neue Geschichtenpakete",
+	"modal":false,
+	"listClass":"pink-back",
+	"class":"just-story"
+},{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Geschichten für die Ferien",
+	"modal":false,
+	"listClass":"light-back",
+	"class":"just-story"
+},{
+	"imageTarget":"#complete-dialog-image",
+	"imageSrc":"img/portfolio/5.png",
+	"dataTarget":"",
+	"header":"Geschichten für heiße Sommertage",
+	"listClass":"pink-back",
+	"modal":false,
+	"class":"just-story"
+},{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"eschichten für kleine Detektive",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Geschichten zum Lachen",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Geschichten für Sportliche",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Geschichten für Tierfreunde",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Geschichten die sich reimen",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Geschichten für kleine Prinzessinen",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Geschichten übers Liebhaben",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Geschichten zum Fürchten",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Geschichten zum Geburtstag",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Geschichten zum Gute Nacht sagen",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"„Geschichten, bei denen Dein",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Kind etwas lernt“",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Geschichten für Schulkinder",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Kurze Geschichten für ganz müde Kinder",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Geschichten übers Kranksein",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Stories about life",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Stories about cleverness",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Stories that tell about nature",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Stories from the Brothers Grimm",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Geschichten für den Herbst",
+	"modal":false,
+	"class":"just-story"
+}
+,{
+	"imageSrc":"img/portfolio/1.png",
+	"dataTarget":"",
+	"header":"Geschichten für kalte Wintertage",
+	"modal":false,
+	"class":"just-story"
+}]

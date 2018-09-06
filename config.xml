@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.lobocroiden.mystories" version="1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>geschichtenbox</name>
+    <description>
+        geschichtenbox
+    </description>
+    <author email="lobocroidy@gmail.com" href="http://www.geschichtenbox.com">
+        Lawrence Croiden Lobo
+    </author>
+	
+	<preference name="SplashScreen" value="screen"/>
+	<preference name="SplashScreenDelay" value="4000" />
+	   
+	<preference name="StatusBarBackgroundColor" value="#698236" />
+	<preference name="android-installLocation" value="preferExternal" />
+	
+	
+	<platform name="android">
+	  <!-- you can use any density that exists in the Android project -->
+	  <splash src="www/res/splash/android/drawable-hdpi/screen.png" density="land-hdpi"/>
+	  <splash src="www/res/splash/android/drawable-ldpi/screen.png" density="land-ldpi"/>
+	  <splash src="www/res/splash/android/drawable-mdpi/screen.png" density="land-mdpi"/>
+	  <splash src="www/res/splash/android/drawable-xhdpi/screen.png" density="land-xhdpi"/>
+	  <splash src="www/res/splash/android/drawable-xxhdpi/screen.png" density="land-xxhdpi"/>
+	  <splash src="www/res/splash/android/drawable-xxxhdpi/screen.png" density="land-xxxhdpi"/>
+	  
+	  <splash src="www/res/splash/android/drawable-hdpi-port/screen.png" density="port-hdpi"/>
+	  <splash src="www/res/splash/android/drawable-ldpi-port/screen.png" density="port-ldpi"/>
+	  <splash src="www/res/splash/android/drawable-mdpi-port/screen.png" density="port-mdpi"/>
+	  <splash src="www/res/splash/android/drawable-xhdpi-port/screen.png" density="port-xhdpi"/>
+	  <splash src="www/res/splash/android/drawable-xxhdpi-port/screen.png" density="port-xxhdpi"/>
+	  <splash src="www/res/splash/android/drawable-xxxhdpi-port/screen.png" density="port-xxxhdpi"/>
+	</platform>
+	
+    <icon src="www/res/icon/android/drawable-ldpi/ic_launcher.png" cdv:platform="android" cdv:qualifier="ldpi" />
+    <icon src="www/res/icon/android/drawable-mdpi/ic_launcher.png" cdv:platform="android" cdv:qualifier="mdpi" />
+    <icon src="www/res/icon/android/drawable-hdpi/ic_launcher.png" cdv:platform="android" cdv:qualifier="hdpi" />
+    <icon src="www/res/icon/android/drawable-xhdpi/ic_launcher.png" cdv:platform="android" cdv:qualifier="xhdpi" />
+    <icon src="www/res/icon/android/drawable-xxhdpi/ic_launcher.png" cdv:platform="android" cdv:qualifier="xxhdpi"/>
+    
+    <content src="index.html" />
+    
+	<plugin name="cordova-plugin-whitelist" version="1" />
+    
+	<access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>

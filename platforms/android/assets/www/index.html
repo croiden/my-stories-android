@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>Story</title>
+	<!--<script type="text/javascript" src="touch-emulator.js"></script>
+	<script>TouchEmulator();</script>-->
+	<script data-main="js/main" src="js/require.js"></script>
+	<!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/roboto.min.css" rel="stylesheet">
+	<link href="css/material-fullpalette.min.css" rel="stylesheet">
+	<link href="css/ripples.min.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body onload="onLoad()">
+	<div class="story-mask display-object"></div>
+	
+	<div id="floatBtn">
+        <div class="button-sub-menu">Facebook</div>
+        <div class="button button-sub" data-color="pink"><span class="glyphicon glyphicon-thumbs-up"></span></div>
+        <div class="button-sub-menu">geschichtenbox.com</div>
+        <div class="button button-sub" data-color="green"><span class="glyphicon glyphicon-globe"></span></div>
+        <div class="button-sub-menu">Information</div>
+        <div class="button button-sub" data-color="purple"><span class="glyphicon glyphicon-info-sign"></span></div>
+        <BR></BR><BR>
+        <div class="button-floating-shadow"></div>
+        <div class="button button-floating"><i id="arrow-for" class="mdi-content-add"></i></div>
+    </div>
+
+	<div id='story-div'>
+		<button id="favBtn" class="btn btn-fab btn-raised btn-white"><i style="color:red" class="mdi-action-favorite-outline"></i></button>
+		<button id="storyBtn" class="btn btn-fab btn-raised btn-black"><i class="mdi-editor-format-color-text"></i></button>
+	</div>
+
+	<div id="complete-dialog-language" class="modal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+			<h4 class="modal-title">Please choose your prefered language</h4>
+		  </div>
+		  <div class="modal-body">
+				<div class="sample1">
+				<div class="radio radio-success" ontouchend="keySound()">
+				  <label>
+					<input type="radio" name="sample1" value="ENG" checked="">
+					English
+				  </label>
+				</div>
+				<div class="radio radio-success" ontouchend="keySound()">
+				  <label>
+					<input type="radio" name="sample1" value="GER">
+					German
+				  </label>
+				</div>
+				<div class="radio radio-success" ontouchend="keySound()">
+				  <label>
+					<input type="radio" name="sample1" value="FRN">
+					French
+				  </label>
+				</div>
+			  </div>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" id="readLang" class="btn btn-primary" ontouchend="keySound()" data-dismiss="modal">Ok</button>
+		</div>
+		</div>
+	  </div>
+	</div>
+
+	<div id="mainNav" class="navbar-fixed-top navbar navbar-default container">
+		
+			<div class="row">
+			  <div id="mainBtn" class="withripple"><i style="color:white" class="mdi-navigation-arrow-back"></i></div>
+		      <a href="#" id="logo"><img src="img/logoTop.png" alt="" class="navbar-img" /></a>
+			  <div id="setBtnNav" class="withripple right-nav-btn"><i style="color:white" class="mdi-action-settings"></i></div>
+			  <div id="favBtnNav" class="withripple right-nav-btn"><i style="color:white" class="mdi-action-favorite"></i></div>
+			</div>
+			<div class="row">
+				<div id="pageTitle" style="padding-left:10px"></div>
+			</div>
+
+	</div>
+
+	<div id="mainPageStory" class="wrapper">
+				<div class="bs-component">
+					<div class="list-group" id="menuItems">
+					</div>
+				</div>
+	</div>
+
+
+	<div id="myVidStories" class="display-object wrapper">
+      <div class="bs-component">
+				<div class="list-group" id="vidStoryItems">
+				</div>
+			</div>
+	</div>
+
+
+  <div id="myStories" class="display-object wrapper">
+			<div class="bs-component">
+				<div class="list-group" id="storyItems">
+
+				</div>
+			</div>
+	</div>
+
+
+	<div id="myListStories" class="display-object wrapper">
+				<div class="bs-component">
+					<div class="list-group" id="listStoryItems">
+
+					</div>
+				</div>
+	</div>
+
+
+	<div id="setting" class="display-object wrapper">
+		<div class="bs-component">
+			<div class="list-group">
+				<div class="list-group-item">
+					<div class="row-content">
+						<h5>Story background</h5>
+						<div class="font-back">
+							<div class="radio radio-success" ontouchend="keySound()">
+							  <label>
+								<input type="radio" name="font-back" value="1" checked="">
+								Light
+							  </label>
+							</div>
+							<div class="radio radio-success" ontouchend="keySound()">
+							  <label>
+								<input type="radio" name="font-back" value="2">
+								Dark
+							  </label>
+							</div>
+						</div>	
+					</div>
+				</div>
+				<hr size="2"/>
+
+				<div class="list-group-item">
+					<div class="row-content">
+						<h5>Story zoom speed</h5>
+						<div id="speedSlider" class="slider shor slider-material-green"></div>	
+					</div>
+				</div>
+				<hr size="2"/>		
+
+				<div class="list-group-item">
+					<div class="row-content">
+						<h5>Story font size</h5>
+						<div class="font-size">
+							<div class="radio radio-success" ontouchend="keySound()">
+							  <label>
+								<input type="radio" name="font-size" value="1" >
+								Small
+							  </label>
+							</div>
+							<div class="radio radio-success" ontouchend="keySound()">
+							  <label>
+								<input type="radio" name="font-size" value="2" checked="">
+								Medium
+							  </label>
+							</div>
+							<div class="radio radio-success" ontouchend="keySound()">
+							  <label>
+								<input type="radio" name="font-size" value="3">
+								Large
+							  </label>
+							</div>
+						</div>	
+					</div>
+				</div>
+				<hr size="2"/>
+			</div>
+		</div>
+	</div>
+
+  	<div id="myPkgStories" class="display-object wrapper">
+  		<div class="bs-component">
+  					<div class="list-group" id="pkgStoryItems">
+              <div class="list-group-item withripple">
+                <div class="row-picture"  ontouchend="keySound()"  data-toggle="modal" data-target="#complete-dialog-image">
+              		<img class="circle" src="img/Elbi_Logo.jpg">
+              	</div>
+                <div class="row-picture"  ontouchend="keySound()"  data-toggle="modal" data-target="#complete-dialog-image">
+              		<img class="circle" src="img/MILUPA_Logo.jpg">
+              	</div>
+              </div>
+  					</div>
+  		</div>
+  	</div>
+
+  	<div id="complete-dialog-image" class="modal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" ontouchend="keySound()" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+			<h4 class="modal-title">Logo</h4>
+		  </div>
+		  <div class="modal-body">
+			<img id="imageFull" src="#" class="img-responsive  center-block" alt="">
+		</div>
+		  <div class="modal-footer">
+			<button class="btn btn-primary" data-dismiss="modal" ontouchend="keySound()">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  <div id="compStory" class="display-object wrapper">
+    <div id="zoom-story" style="font-size:16px">A thirsty crow once found a pitcher with a little water in it. But when he tired to drink the water, he could not. The pitcher was tall and his beak didn't reach the water.
+
+The cleaver crow thought and hit upon a plan. He went on dropping pebbles into the pitcher. The water rose up to its neck and he quenched his thirst.
+MORAL : Will finds the way
+    </div>
+    <ul class="list-inline item-details">
+      <li>Story Writer:
+        <strong><a href="#">ABC</a>
+        </strong>
+      </li>
+      <li>Date:
+        <strong><a href="#">April 2014</a>
+        </strong>
+      </li>
+      <li>Etc:
+        <strong><a href="#">Etc</a>
+        </strong>
+      </li>
+    </ul>
+  </div>
+
+	<div id="complete-dialog-video" class="modal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" ontouchend="keySound()" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+			<h4 class="modal-title">Video Story title goes here</h4>
+		  </div>
+		  <div class="modal-body">
+			<video id="myVideo" controls width="100%" height="100%" poster="img/portfolio/5.png">
+				<source src="video/vid.mp4" type="video/mp4">
+				Your browser does not support video.
+			</video>
+			  <ul class="list-inline item-details">
+				<li>Story Writer:
+					<strong><a href="#">ABC</a>
+					</strong>
+				</li>
+				<li>Date:
+					<strong><a href="#">April 2014</a>
+					</strong>
+				</li>
+				<li>Etc:
+					<strong><a href="#">Etc</a>
+					</strong>
+				</li>
+			</ul>
+		  </div>
+		  <div class="modal-footer">
+			<button class="btn btn-primary" data-dismiss="modal" ontouchend="keySound()">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<div id="complete-dialog-info" class="modal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog info-model-dialog">
+		<div class="modal-content info-model">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" ontouchend="keySound()" aria-hidden="true" style="color: white"><span class="glyphicon glyphicon-remove"></span></button>
+			<h4 class="modal-title">Information</h4>
+		  </div>
+		  <div class="modal-body">
+			Information goes here .. .. .. ..
+			Information goes here .. .. .. ..
+			Information goes here .. .. .. ..
+			Information goes here .. .. .. ..
+			Information goes here .. .. .. ..
+			Information goes here .. .. .. ..
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<div id="complete-dialog-listen" class="modal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" ontouchend="keySound()" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+			<h4 class="modal-title">Story to Listen</h4>
+		  </div>
+		  <div class="modal-body">
+			<audio controls>
+			  <source  type="audio/ogg">
+			  <source  src="audio/vodka.mp3" type="audio/mp3">
+				Your browser does not support the audio element.
+			</audio>
+		  </div>
+		  <div class="modal-footer">
+			<button class="btn btn-primary" data-dismiss="modal" ontouchend="keySound()">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<div id="complete-dialog-promocode" class="modal promo-code" tabindex="-1" role="dialog">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" ontouchend="keySound()" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+			<h4 class="modal-title">Promo code</h4>
+		  </div>
+
+		  <form class="bs-component">
+			  <div class="modal-body">
+					<div class="form-group">
+						<input class="form-control floating-label" id="focusedInput" type="text" required autofocus placeholder="Enter the Promo code">
+					</div>
+				</div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" ontouchend="keySound()">Cancel</button>
+				<button type="submit" id="promoConfirm" class="btn btn-primary" disabled ontouchend="keySound()">Confirm</button>
+			</div>
+		</form>
+		</div>
+	  </div>
+	</div>
+  <div id="complete-dialog-register" class="modal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" ontouchend="keySound()" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+			<h5 class="modal-title">TIPP:
+Neben den APP-Paketen kannst du dir deine
+Vorlesegeschichten automatisch per E-Mail
+zuschicken lassen.
+Melde dich gleich an!</h5>
+		  </div>
+		<form class="bs-component">			
+			  <div class="modal-body">
+				<div class="form-group">
+					<input class="form-control floating-label" id="emailInput"  type="email" autofocus placeholder="Email Id">
+					<BR>
+					<input class="form-control floating-label" id="pwdInput" type="password" required placeholder="Password">
+					</div>
+				</div>
+			  <div class="modal-footer">
+				<button type="button" id="regisSkip" class="btn btn-default" data-dismiss="modal" ontouchend="keySound()">Skip</button>
+				<button type="submit" id="regisConfirm" class="btn btn-primary" ontouchend="keySound()">Register</button>
+			</div>
+		</form>
+		</div>
+  </div>
+</div>
+
+	<div id="complete-dialog-confirm" class="modal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" ontouchend="keySound()" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+			<h4 class="modal-title">Confirm</h4>
+		  </div>
+		  <div class="modal-body">
+			<p>Do you want to exit the app?</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal" ontouchend="keySound()">No</button>
+			<button id="appClose" type="button" class="btn btn-primary" ontouchend="keySound()">Yes</button>
+		</div>
+		</div>
+	  </div>
+	</div>
+
+	<div id="complete-dialog-story-lang" class="modal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+			<h4 class="modal-title">Geschichten zum Lesen</h4>
+		  </div>
+		  <div class="modal-body">
+					<div class="story-lang">
+					<div class="list-group-item">
+						<div class="row-content">
+
+							<div class="radio radio-success" ontouchend="keySound()">
+							  <label>
+								<input type="radio" name="story-lang" value="DEU" checked="">
+								Geschichten auf Deutsch
+							  </label>
+							</div>
+						</div>
+					</div>	
+					<div class="list-group-item">
+						<div class="row-content">
+
+						<div class="radio radio-success" ontouchend="keySound()">
+						  <label>
+							<input type="radio" name="story-lang" value="SER">
+							Geschichten auf Serbokroatisch
+						  </label>
+						</div>
+						</div>
+					</div>	
+					<div class="list-group-item">
+						<div class="row-content">
+
+						<div class="radio radio-success" ontouchend="keySound()">
+						  <label>
+							<input type="radio" name="story-lang" value="TUR">
+							Geschichten auf Türkisch
+						  </label>
+						</div>
+						</div>
+					</div>	
+					<div class="list-group-item">
+						<div class="row-content">
+
+							<div class="radio radio-success" ontouchend="keySound()">
+							  <label>
+								<input type="radio" name="story-lang" value="OTH">
+								Geschichten auf anderen Sprachen
+							  </label>
+							</div>
+						</div>
+				  </div>
+				 </div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<div id="complete-dialog-age" class="modal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+			<h4 class="modal-title">Geschichten auf Deutsch</h4>
+		  </div>
+		  <div class="modal-body">
+					<div class="story-age">
+					<div class="list-group-item">
+						<div class="row-content">
+
+							<div class="radio radio-success" ontouchend="keySound()">
+							  <label>
+								<input type="radio" name="story-age" value="35" checked="">
+								Geschichten für 3-5 jährige
+							  </label>
+							</div>
+						</div>
+					</div>	
+					<div class="list-group-item">
+						<div class="row-content">
+
+						<div class="radio radio-success" ontouchend="keySound()">
+						  <label>
+							<input type="radio" name="story-age" value="57">
+							Geschichten für 5-7 jährige
+						  </label>
+						</div>
+						</div>
+					</div>	
+					<div class="list-group-item">
+						<div class="row-content">
+
+						<div class="radio radio-success" ontouchend="keySound()">
+						  <label>
+							<input type="radio" name="story-age" value="710">
+							Geschichten für 7-10 jährige
+						  </label>
+						</div>
+						</div>
+					</div>	
+					<div class="list-group-item">
+						<div class="row-content">
+
+							<div class="radio radio-success" ontouchend="keySound()">
+							  <label>
+								<input type="radio" name="story-age" value="10">
+								Geschichten für 10+
+							  </label>
+							</div>
+						</div>
+				  </div>
+				 </div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<script>
+  var backButton,modalWindow,pushArray = [];
+  var zoomSpeed = "0.2", storyFont = "2", storyBackground = "1";
+  function onLoad(){
+    document.addEventListener("deviceready", onDeviceReady, false);
+  }
+  function onDeviceReady() {
+    document.addEventListener("backbutton", onBackKeyPressed, false);
+    if (cordova.platformId == 'android') {
+      StatusBar.backgroundColorByHexString("#698236");
+    }
+
+    if(window.localStorage.getItem("zoomSpeed")=== 'null' || window.localStorage.getItem("zoomSpeed")===null){
+	    window.localStorage.setItem("zoomSpeed",zoomSpeed);
+	}else{
+		zoomSpeed = window.localStorage.getItem("zoomSpeed");
+	}
+	if(window.localStorage.getItem("storyFont")=== 'null' || window.localStorage.getItem("storyFont")===null){
+	    window.localStorage.setItem("storyFont",storyFont);
+	}else{
+		storyFont = window.localStorage.getItem("storyFont");
+	 	
+	}
+	 if(window.localStorage.getItem("storyBackground")=== 'null' || window.localStorage.getItem("storyBackground")===null){
+	    window.localStorage.setItem("storyBackground",storyBackground);
+	}else{
+		storyBackground = window.localStorage.getItem("storyBackground");
+	 	
+	}
+	modalWindow();
+  }
+  function onBackKeyPressed(){
+    backButton();
+  }
+  function vibrate(){
+    try{
+	  if (cordova.platformId == 'android') {
+		window.plugins.deviceFeedback.haptic();
+	  }
+    }catch(e){}
+  }
+  function keySound(){
+    try{
+	  if (cordova.platformId == 'android') {
+		window.plugins.deviceFeedback.acoustic();
+	  }
+    }catch(e){}
+  }
+	</script>
+	</body>
+</html>

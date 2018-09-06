@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.lobocroiden.mystories" version="1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="DeviceFeedback">
+        <param name="android-package" value="cz.Velda.cordova.plugin.devicefeedback.DeviceFeedback" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <splash density="land-hdpi" src="www/res/splash/android/drawable-hdpi/screen.png" />
+    <splash density="land-ldpi" src="www/res/splash/android/drawable-ldpi/screen.png" />
+    <splash density="land-mdpi" src="www/res/splash/android/drawable-mdpi/screen.png" />
+    <splash density="land-xhdpi" src="www/res/splash/android/drawable-xhdpi/screen.png" />
+    <splash density="land-xxhdpi" src="www/res/splash/android/drawable-xxhdpi/screen.png" />
+    <splash density="land-xxxhdpi" src="www/res/splash/android/drawable-xxxhdpi/screen.png" />
+    <splash density="port-hdpi" src="www/res/splash/android/drawable-hdpi-port/screen.png" />
+    <splash density="port-ldpi" src="www/res/splash/android/drawable-ldpi-port/screen.png" />
+    <splash density="port-mdpi" src="www/res/splash/android/drawable-mdpi-port/screen.png" />
+    <splash density="port-xhdpi" src="www/res/splash/android/drawable-xhdpi-port/screen.png" />
+    <splash density="port-xxhdpi" src="www/res/splash/android/drawable-xxhdpi-port/screen.png" />
+    <splash density="port-xxxhdpi" src="www/res/splash/android/drawable-xxxhdpi-port/screen.png" />
+    <allow-intent href="market:*" />
+    <name>geschichtenbox</name>
+    <description>
+        geschichtenbox
+    </description>
+    <author email="lobocroidy@gmail.com" href="http://www.geschichtenbox.com">
+        Lawrence Croiden Lobo
+    </author>
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="4000" />
+    <preference name="StatusBarBackgroundColor" value="#698236" />
+    <preference name="android-installLocation" value="preferExternal" />
+    <icon cdv:platform="android" cdv:qualifier="ldpi" src="www/res/icon/android/drawable-ldpi/ic_launcher.png" />
+    <icon cdv:platform="android" cdv:qualifier="mdpi" src="www/res/icon/android/drawable-mdpi/ic_launcher.png" />
+    <icon cdv:platform="android" cdv:qualifier="hdpi" src="www/res/icon/android/drawable-hdpi/ic_launcher.png" />
+    <icon cdv:platform="android" cdv:qualifier="xhdpi" src="www/res/icon/android/drawable-xhdpi/ic_launcher.png" />
+    <icon cdv:platform="android" cdv:qualifier="xxhdpi" src="www/res/icon/android/drawable-xxhdpi/ic_launcher.png" />
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+</widget>

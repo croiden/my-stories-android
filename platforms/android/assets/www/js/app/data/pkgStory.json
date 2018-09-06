@@ -1,0 +1,34 @@
+[{
+	"imageSrc":"img/Elbi_Logo.jpg",
+	"dataTarget":"",
+	"header":"Informationen",
+	"heading":"„Kinderärzte machen mobil“",
+	"listClass":"pink-back",
+	"modal":false
+},{
+	"imageSrc":"img/Elbi_Logo.jpg",
+	"dataTarget":"",
+	"header":"„Sponsor-Geschichten“",
+	"modal":false,
+	"listClass":"light-back"
+},{
+	"imageSrc":"img/portfolio/6.png",
+	"dataTarget":"#complete-dialog-video",
+	"header":"Interaktives Geschichtenvideo",
+  	"heading":"Geschichtenpakete",
+	"listClass":"pink-back",
+	"modal":true
+},{
+	"imageSrc":"img/portfolio/5.png",
+	"dataTarget":"#complete-dialog-story-lang",
+	"header":"Geschichten zum Lesen",
+	"listClass":"light-back",
+	"modal":true
+},{
+	"imageSrc":"img/portfolio/4.png",
+	"dataTarget":"",
+	"header":"Geschichten zum Zuhören",
+	"listClass":"pink-back",
+	"id":"listenStory",
+	"modal":false
+}]

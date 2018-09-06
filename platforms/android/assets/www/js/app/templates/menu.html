@@ -1,0 +1,27 @@
+{{#if heading}}
+<div class="list-group-item header-back"><h4>{{heading}}</h4></div>
+{{/if}}
+
+{{#if modal}}
+<div class="list-group-item {{listClass}}"  ontouchend="keySound()" data-toggle="modal" data-target="{{dataTarget}}">
+	<div class="row-picture">
+		<img class="circle" src="{{imageSrc}}">
+	</div>
+	<div class="row-content">
+		<h4 class="list-group-item-heading">{{header}}</h4>
+	</div>
+</div>
+
+{{else}}
+
+<div class="list-group-item {{listClass}} {{class}}" id="{{id}}">
+	<div class="row-picture">
+		<img class="circle" src="{{imageSrc}}">
+	</div>
+	<div class="row-content">
+		<h4 class="list-group-item-heading">{{header}}</h4>
+	</div>
+</div>
+
+{{/if}}
+<div class="list-group-separator"></div>

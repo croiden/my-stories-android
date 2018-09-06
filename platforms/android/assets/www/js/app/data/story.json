@@ -1,0 +1,29 @@
+[{
+	"dataTarget":"#complete-dialog",
+	"header":"Story 1",
+	"description":"Story description goes here"
+},{
+	"dataTarget":"#complete-dialog",
+	"header":"Story 2",
+	"description":"Story description goes here"
+},{
+	"dataTarget":"#complete-dialog",
+	"header":"Story 3",
+	"description":"Story description goes here"
+},{
+	"dataTarget":"#complete-dialog",
+	"header":"Story 4",
+	"description":"Story description goes here"
+},{
+	"dataTarget":"#complete-dialog",
+	"header":"Story 5",
+	"description":"Story description goes here"
+},{
+	"dataTarget":"#complete-dialog",
+	"header":"Story 6",
+	"description":"Story description goes here"
+},{
+	"dataTarget":"#complete-dialog",
+	"header":"Story 7",
+	"description":"Story description goes here"
+}]
